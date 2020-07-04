@@ -4,18 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% block head %}
-        <title>Online Classes</title>
+        <title>Class Manager</title>
     {% endblock %}
     <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
     <header>
         <div class="links">
-            <a href="/" class="active">Teachers</a>
+            <a href="/teachers">Teachers</a>
             <a href="/students">Students</a>
         </div>
     </header>
 
     {% block content %}{% endblock %}
+
+    <script src="/scripts.js"></script>
 </body>
 </html>

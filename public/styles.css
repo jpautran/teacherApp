@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 :root {
-    --primary-color: #7159c1;
-    --secondary-color: #f7df1e;
+    --primary-color: #0b132b;
+    --bg-color: #1c2541;
+    --secondary-color:#3a506b;
+    --font-dark-color: #5bc0be;
+    --font-color: #6fffe9;
 }
 
 * {
@@ -17,7 +20,7 @@ body {
 }
 
 header {
-    background-color: white;
+    background-color: var(--bg-color);
     width: 100%;
     padding: 32px;
     text-align: center;
@@ -34,20 +37,20 @@ header {
 
 .links a {
     text-decoration: none;
-    color: #777777;
+    color: var(--font-dark-color);
     position: relative;
 }
 
 .links a.active {
     font-weight: bold;
-    color: var(--primary-color);
+    color: var(--font-color);
 }
 
 .links a::after {
     content: "";
     width: 0;
     height: 2px;
-    background-color: var(--primary-color);
+    background-color: var(--font-dark-color);
     position: absolute;
     left: 0;
     bottom: -4px;  
@@ -61,7 +64,7 @@ header {
 /*=== CARDS ===*/
 
 .card {
-    background-color: white;
+    background-color: var(--bg-color);
     width: 800px;
     min-height: 400px;
     margin: 45px auto;
@@ -100,13 +103,13 @@ header {
 .details .item div:nth-child(1) {
     font-size: 14px;
     line-height: 24px;
-    color: #777;
+    color: var(--font-color);
     letter-spacing: 0.7px;
     font-weight: normal;
 }
 
 .details .item div:nth-child(2) {
-    color: #555;
+    color: var(--font-dark-color);
     font-weight: bold;
     font-size: 18px;
 }
@@ -114,14 +117,14 @@ header {
 .details h3 {
     text-transform: uppercase;
     font-weight: bold;
-    color: var(--primary-color);
+    color: var(--font-color);
 }
 
 .details .item span {
     padding: 8px 16px;
     background-color: var(--secondary-color);
     border-radius: 16px;
-    color: #777;
+    color: var(--font-color);
     margin-right: 4px;
     margin-top: 8px;
     display: inline-block;
@@ -132,10 +135,10 @@ header {
 
 /*=== FORM ===*/
 
-input {
+input, select {
     width: 100%;
     outline: none;
-    color: #555;
+    color: var(--font-dark-color);
     font-weight: bold;
     font-size: 18px;
 }
@@ -153,8 +156,8 @@ input::placeholder {
 button[type="submit"],
 a.button {
     padding: 8px 32px;
-    background-color: var(--primary-color);
-    color: white;
+    background-color: var(--secondary-color);
+    color: var(--font-color);
     border-radius: 4px;
     margin-top: 32px;
     width: 100%;
@@ -166,4 +169,78 @@ a.button {
     box-sizing: border-box;
     text-align: center;
     text-decoration: none;
+}
+
+#form-delete button[type="submit"] {
+    margin-top: 8px;
+    background-color: lightcoral;
+}
+
+/*=== INDEX INSTRUCTORS ===*/
+
+.table-container {
+    display: block;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.table-container table {
+    border-spacing: 0;
+}
+
+.table-container thead tr th {
+    text-align: left;
+}
+
+td, td {
+    padding: 16px;
+    border-bottom: 1px solid var(--font-dark-color);
+    color: var(--font-color);
+}
+
+th {
+    text-transform: uppercase;
+    color: var(--font-color);
+    font-size: 14px;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr td:first-child {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    align-items: center;
+}
+
+tbody tr td:first-child span {
+    width: 48px;
+    height: 48px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    box-shadow: 3px 1px 6px -4px black;
+    border: 1px solid  var(--font-dark-color);
+}
+
+tbody tr td:last-child a,
+.table-container > a {
+    background-color: var(--secondary-color);
+    padding: 8px 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--font-color);
+    font-size: 12px;
+    border-radius: 4px;
+}
+
+.table-container > a {
+    margin-bottom: 16px;
+    display: inline-block;
+}
+
+.table-container thead tr th:last-child,
+td:last-child {
+    text-align: center;
 }

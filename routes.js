@@ -1,29 +1,28 @@
 const express = require('express');
 const routes = express.Router();
-const instructors = require('./instructors');
+const teachers = require('./controllers/teachers');
+const students = require('./controllers/students');
 
 routes.get('/', function(req, res) {
-    return res.redirect("/instructors");
+    return res.redirect("/teachers");
 });
 
-routes.get('/instructors', function(req, res) {
-    return res.render("instructors/index");
-});
+routes.get('/teachers', teachers.index);
+routes.get('/teachers/create', teachers.create);
+routes.get('/teachers/:id', teachers.show);
+routes.get('/teachers/:id/edit', teachers.edit);
+routes.post("/teachers", teachers.post);
+routes.put("/teachers", teachers.put);
+routes.delete("/teachers", teachers.delete);
 
-routes.get('/instructors/create', function(req, res) {
-    return res.render('instructors/create');
-});
 
-routes.get('/instructors/:id', instructors.show);
+routes.get('/students', students.index);
+routes.get('/students/create', students.create);
+routes.get('/students/:id', students.show);
+routes.get('/students/:id/edit', students.edit);
+routes.post("/students", students.post);
+routes.put("/students", students.put);
+routes.delete("/students", students.delete);
 
-routes.get('/instructors/:id/edit', function(req, res) {
-    return res.render('instructors/edit');
-});
-
-routes.post("/instructors", instructors.post);
-
-routes.get('/members', function(req, res) {
-    return res.send("members");
-});
 
 module.exports = routes;

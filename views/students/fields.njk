@@ -20,14 +20,14 @@
         </div>
 
         <div class="item">
-            <div>Data de nascimento</div>
+            <div>Education level</div>
             <div>
                 <input type="date" name="birth" value="{{ student.birth }}">
             </div>
         </div>
 
         <div class="item">
-            <div>Sexo</div>
+            <div>Age</div>
             <div>
                 <span><input type="radio" name="gender" value="M" {% if student.gender == 'M' %}
                     checked
@@ -43,7 +43,7 @@
         </div>
 
         <div class="item">
-            <div>Tipo sanguíneo</div>
+            <div>Subjects</div>
             <div>
                <select name="blood">
                    <option value="A+" {% if student.blood == "A+" %} selected {% endif %}>
